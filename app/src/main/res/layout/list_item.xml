@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" 
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:id="@+id/parent_layout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_View_Key"
+        android:textSize="32sp"
+        android:text="PRZYKLAD"/>
+
+    <TextView
+        android:id="@+id/text_View_Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/text_View_Key"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:textSize="24sp"
+        android:text="WARTOŚĆ"/>
+
+</RelativeLayout>
