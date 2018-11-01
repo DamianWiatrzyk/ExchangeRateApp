@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     mItems.add(new ListItem(x.getKey(), x.getValue().toString(), 0, rate.getDate()));
                 }
                 mAdapter.notifyDataSetChanged();
-                mDaysToSubtract++;
+                mDaysToSubtract--;
             }
 
             @Override
@@ -88,11 +89,9 @@ public class MainActivity extends AppCompatActivity {
 
     private String getSubtractedDate(int days) {
         Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.DATE, (days) * (-1));
-        int day = cal.get(Calendar.DATE);
-        int month = cal.get(Calendar.MONTH) + 1;
-        int year = cal.get(Calendar.YEAR);
-        String date = "" + year + '-' + month + '-' + day;
+        cal.add(Calendar.DATE, days);
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        String date = format1.format(cal.getTime());
         return date;
     }
 

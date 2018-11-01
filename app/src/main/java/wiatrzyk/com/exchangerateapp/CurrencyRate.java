@@ -23,5 +23,5 @@ public class CurrencyRate {
 
     public String getDate() {
         return date;
-    }
+        }
 }
